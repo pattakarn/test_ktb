@@ -3,6 +3,7 @@ package io.assignment.stockvaluebackend;
 public class Quote {
     private String symbol;
     private String companyName;
+    
 
     public String getSymbol() {
         return symbol;

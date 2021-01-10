@@ -18,13 +18,17 @@ public class HomeController {
     @GetMapping("/stock")
     public String stock() {
         RestTemplate restTemplate = new RestTemplate();
+
+        // get all
         final String uri = "https://sandbox.iexapis.com/stable/stock/market/batch?symbols=aapl,fb,googl,msft&types=quote,chart&range=1m&last=30&token=Tpk_cfc7333fc26c4c179f1a66b65efaf9ee";
+        String result = restTemplate.getForObject(uri, String.class);
+
+        // get one for add to data class
         // final String uriAppl = "https://sandbox.iexapis.com/stable/stock/aapl/batch?types=quote,chart&range=1m&last=10&token=Tpk_cfc7333fc26c4c179f1a66b65efaf9ee";
         // final String uriFb = "https://sandbox.iexapis.com/stable/stock/fb/batch?types=quote,chart&range=1m&last=10&token=Tpk_cfc7333fc26c4c179f1a66b65efaf9ee";
         // final String uriGoogl = "https://sandbox.iexapis.com/stable/stock/googl/batch?types=quote,chart&range=1m&last=10&token=Tpk_cfc7333fc26c4c179f1a66b65efaf9ee";
         // final String uriMsft = "https://sandbox.iexapis.com/stable/stock/msft/batch?types=quote,chart&range=1m&last=10&token=Tpk_cfc7333fc26c4c179f1a66b65efaf9ee";
  
-        String result = restTemplate.getForObject(uri, String.class);
         // Stock resultAppl = restTemplate.getForObject(uriAppl, Stock.class);
         // Stock resultFb = restTemplate.getForObject(uriFb, Stock.class);
         // Stock resultGoogl = restTemplate.getForObject(uriGoogl, Stock.class);
