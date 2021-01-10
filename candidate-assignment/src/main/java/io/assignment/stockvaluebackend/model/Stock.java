@@ -1,8 +1,7 @@
-package io.assignment.stockvaluebackend;
+package io.assignment.stockvaluebackend.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class Stock {
     private Quote quote;
     private Chart[] chart;

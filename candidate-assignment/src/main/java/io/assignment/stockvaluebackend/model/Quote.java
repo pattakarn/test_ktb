@@ -1,4 +1,4 @@
-package io.assignment.stockvaluebackend;
+package io.assignment.stockvaluebackend.model;
 
 public class Quote {
     private String symbol;
